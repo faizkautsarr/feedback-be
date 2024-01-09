@@ -1,0 +1,14 @@
+# Node.js
+node_modules/
+
+# TypeScript
+*.js
+*.map
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs and generated files
+logs/
+dist/
