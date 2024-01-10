@@ -87,6 +87,11 @@ Example request body:
 }
 ```
 
+#### Response
+
+- **Status Code:** 201 OK indicate Success adding feedback data
+- **Status Code:** 400 ERROR indicates there are errors on the api, it can be cause of the invalid input, network/bug issue, and so on.
+
 ### Get Feedback
 
 Retrieve feedback data.
@@ -96,8 +101,8 @@ Retrieve feedback data.
 
 #### Response
 
-- **Status Code:** 200 OK
-- **Response Body:** JSON array containing feedback data.
+- **Status Code:** 201 OK indicate Succes get feedback data
+- **Status Code:** 500 ERROR indicates there are errors when retrieveing feedback data, it can be cause of the invalid input, network/bug issue, and so on.
 
 Example response body:
 
@@ -120,6 +125,35 @@ Example response body:
     }
   ]
 }
+```
+
+## Testing Api via curl or web browser
+
+- After your services is running, you can hit the add feedback endpoint via postman, curl, or any other application
+
+- Example via curl in terminal
+
+```
+curl -X POST -H "Content-Type: application/json" -d '{"name":"John Doe", "petName":"Fluffy", "rating": 5, "comment":"Great service!"}' http://{{YOUR_NETWORK_IP}}:7777/api/feedback
+
+```
+
+- If its success it will return
+
+```
+{"success":true,"message":"Feedback received and stored successfully.","data":{"name":"John Doe","petName":"Fluffy","rating":5,"comment":"Great service!"}}
+```
+
+- You can check if the feedback added successfully via your web browser
+
+```
+http://{{YOUR_NETWORK_IP}}:7777/api/feedback
+```
+
+- It will return
+
+```
+{"success":true,"message":"Feedback data retrieved successfully.","data":[{"name":"John Doe","petName":"Fluffy","rating":5,"comment":"Great service!"}]}
 ```
 
 ## Authors
