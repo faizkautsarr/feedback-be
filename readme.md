@@ -124,4 +124,4 @@ Example response body:
 
 ## Authors
 
-- [@octokatherine](https://www.github.com/faizkautsarr)
+- [@faizkautsarr](https://www.github.com/faizkautsarr)
