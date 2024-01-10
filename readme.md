@@ -54,7 +54,7 @@ To run this project locally:
   will return
 
   ```bash
-  {"success":true,"message":"Feedback data retrieved successfully.","data":[]}
+  {"success":true,"message":"Welcome to the Feedback API","data":"author, faiz k."}
 
   ```
 
