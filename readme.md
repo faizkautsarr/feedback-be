@@ -92,6 +92,21 @@ Example request body:
 - **Status Code:** 201 OK indicate Success adding feedback data
 - **Status Code:** 400 ERROR indicates there are errors on the api, it can be cause of the invalid input, network/bug issue, and so on.
 
+Example success response body:
+
+```json
+{
+  "success": true,
+  "message": "Feedback received and stored successfully.",
+  "data": {
+    "name": "John Doe",
+    "petName": "Fluffy",
+    "rating": 5,
+    "comment": "Great service!"
+  }
+}
+```
+
 ### Get Feedback
 
 Retrieve feedback data.
@@ -104,7 +119,7 @@ Retrieve feedback data.
 - **Status Code:** 201 OK indicate Succes get feedback data
 - **Status Code:** 500 ERROR indicates there are errors when retrieveing feedback data, it can be cause of the invalid input, network/bug issue, and so on.
 
-Example response body:
+Example success response body:
 
 ```json
 {
