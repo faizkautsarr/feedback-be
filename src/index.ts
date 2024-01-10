@@ -1,17 +1,11 @@
 import express, { Request, Response } from "express";
-const app = express();
-const port = 7777; // Change the port to 5173 or any desired port
+import Feedback from "./models/feedback";
 
+const app = express();
+const port = 7777;
 let feedbackData: Feedback[] = [];
 
 app.use(express.json());
-// Define feedback structure
-interface Feedback {
-  name: string;
-  petName: string;
-  rating: number;
-  comment?: string;
-}
 
 app.get("/", (req, res) => {
   const sampleResponse = {
@@ -24,7 +18,6 @@ app.get("/", (req, res) => {
 });
 
 app.post("/api/feedback", (req: Request, res: Response) => {
-  console.log("Request Body:", req.body);
   try {
     // Validate and extract feedback data from the request body
     const { name, petName, rating, comment } = req.body as Feedback;
@@ -83,6 +76,7 @@ app.get("/api/feedback", (req: Request, res: Response) => {
   }
 });
 
-app.listen(port, "0.0.0.0", () => {
-  console.log(`Server is running on http://0.0.0.0:${port}`);
+// change to your network ip, make sure your server and client run on same network to test it locally
+app.listen(port, "192.168.1.2", () => {
+  console.log(`Server is running on http://192.168.1.2:${port}`);
 });
